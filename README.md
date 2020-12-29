@@ -1,11 +1,36 @@
 # moncattle
 Repositório dedicado para o desenvolvimento das atividades do mestrado em Informática Aplicada na UFRPE.
 
+## Dados dos experimentos
+
+* 2 períodos: primeiro de 25/03/15 a 30/03/15 e de 06/04/15 a 09/04/15
+* Foram utilizadas 4 coleiras (A, B, C e D).
+* 4 animais (3 distintos)
+
+### Base de Dados
+
+O arquivo embrapa.csv contém todos os dados aglutinados que foram utilizados. A estrutura de cabeçalho é definida da seguinte forma:
+
+IdColar | AccX | AccY | AccZ | MagX | MagY | MagZ | GirX | GirY | GirZ | horario | data | velocidadeDeslocamento | comportamento 
+ --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |---|---|---
+A2 | -11889 | 11184 | -17877 | -1280 | -73 | -309 | -4013 | 1260 | -31 | 131911.203 | 250515 | 000.0 | Comendo/Procurando
+A2 | -9144 | 8945 | -11799 | -1213 | 707 | -238 | -394 | 2278 | -602 | 131949.203 | 250515 | 000.0 | Comendo/Procurando
+A2 | 6391 | 9265 | -11767 | 570 | -405 | -1533 | -1072 | -1094 | 1854 | 132148.203 | 250515 | 000.0 | EmPe
+A2 | -1394 | 10206 | -13229 | 671 | -73 | -1590 | 287 | 2253 | -2760 | 132151.203 | 250515 | 000.0 | Comendo/Procurando
+...| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... 
+D4 | 2152 | 7619 | -7736 | -1650 | 788 | 43 | -2980 | 3678 | -1357 | 122529.111 | 040715 | 000.0 | Comendo/Procurando
+
+## Pré-Processamento
+
+
 ## Aprendizagem Supervisionada
 
 
-
-
-
 ## Aprendizagem Não Supervisionada
+
+
+
+## Links
+
+[Dissertação Luiz Lomba](https://repositorio.ufms.br/jspui/bitstream/123456789/2627/1/LUIZ%20FERNANDO%20DELBONI%20LOMBA.pdf)
 
