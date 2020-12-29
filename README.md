@@ -11,7 +11,7 @@ Repositório dedicado para o desenvolvimento das atividades do mestrado em Infor
 
 O arquivo embrapa.csv contém todos os dados aglutinados que foram utilizados. A estrutura de cabeçalho é definida da seguinte forma:
 
-IdColar | AccX | AccY | AccZ | MagX | MagY | MagZ | GirX | GirY | GirZ | horario | data | velocidadeDeslocamento | comportamento 
+IdColar | AccX | AccY | AccZ | MagX | MagY | MagZ | GirX | GirY | GirZ | Horario | Data | VelocidadeDeslocamento | Comportamento 
  --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |---|---|---
 A2 | -11889 | 11184 | -17877 | -1280 | -73 | -309 | -4013 | 1260 | -31 | 131911.203 | 250515 | 000.0 | Comendo/Procurando
 A2 | -9144 | 8945 | -11799 | -1213 | 707 | -238 | -394 | 2278 | -602 | 131949.203 | 250515 | 000.0 | Comendo/Procurando
