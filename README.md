@@ -4,8 +4,13 @@ Repositório dedicado para o desenvolvimento das atividades do mestrado em Infor
 ## Dados dos experimentos
 
 * 2 períodos: primeiro de 25/03/15 a 30/03/15 e de 06/04/15 a 09/04/15
-* Foram utilizadas 4 coleiras (A, B, C e D).
 * 4 animais (3 distintos)
+* Foram utilizadas 4 coleiras (A, B, C e D). Entretanto, houve algumas falhas durante o experimento e, no final, ficaram as seguintes bases:
+  - A2 e A3
+  - B2 e B3
+  - C3 e C4
+  - D1, D2, D3 e D4
+
 
 ### Base de Dados
 
@@ -19,6 +24,14 @@ A2 | 6391 | 9265 | -11767 | 570 | -405 | -1533 | -1072 | -1094 | 1854 | 132148.2
 A2 | -1394 | 10206 | -13229 | 671 | -73 | -1590 | 287 | 2253 | -2760 | 132151.203 | 250515 | 000.0 | Comendo/Procurando
 ...| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... 
 D4 | 2152 | 7619 | -7736 | -1650 | 788 | 43 | -2980 | 3678 | -1357 | 122529.111 | 040715 | 000.0 | Comendo/Procurando
+
+
+No total há 13088 amostras. A tabela a seguir mostra a segmentação das amostras por coleira
+
+A2 | A3 | B2 | B3 | C3 | C4 | D1 | D2 | D3 | D4 | Total
+--- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- | 
+1112 | 2033 | 1131 | 1735 | 1852 | 406 | 1126 | 1690 | 1598 | 405 | 13088
+
 
 ## Pré-Processamento
 
