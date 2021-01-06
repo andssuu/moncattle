@@ -4,7 +4,12 @@ Repositório dedicado para o desenvolvimento das atividades do mestrado em Infor
 ## Dados dos experimentos
 
 * 2 períodos: primeiro de 25/03/15 a 30/03/15 e de 06/04/15 a 09/04/15
-* Foram utilizadas 4 coleiras (A, B, C e D).
+* Foram utilizadas 4 coleiras (A, B, C e D). Entretanto, houve algumas falhas durante o experimento e, no final, ficaram as seguintes bases:
+  - A2 e A3
+  - B2 e B3
+  - C3 e C4
+  - D1, D2, D3 e D4
+
 * 4 animais (3 distintos)
 
 ### Base de Dados
