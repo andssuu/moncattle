@@ -44,7 +44,8 @@ A2 | A3 | B2 | B3 | C3 | C4 | D1 | D2 | D3 | D4 | Total
 
 ## Aprendizagem Não Supervisionada
 
-  ### Rede SOM
+  ### [Rede SOM](https://github.com/andssuu/moncattle/blob/master/main/unsupervised/notebooks/som.ipynb)
+
 
   ### K-Means
 
