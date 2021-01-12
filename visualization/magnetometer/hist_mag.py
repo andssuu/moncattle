@@ -16,7 +16,7 @@ if __name__ == "__main__":
     fig, axs = plt.subplots(3, sharex=True, sharey=True)
     fig.canvas.set_window_title(
         'histograma magnetometro {}'.format(base.lower()))
-    fig.text(0.5, 0.04, '???', ha='center', fontsize=15)
+    fig.text(0.5, 0.04, 'gauss', ha='center', fontsize=15)
     fig.text(0.07, 0.5, 'Frequência Absoluta',
              va='center', rotation='vertical', fontsize=15)
     [ax.hist(data.iloc[:, i], edgecolor='black', alpha=0.7)

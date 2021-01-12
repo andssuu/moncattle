@@ -13,7 +13,7 @@ if __name__ == "__main__":
     fig, axs = plt.subplots(2, 5, sharex=True, sharey=True)
     fig.canvas.set_window_title('gyroscope magnetometer all')
     fig.suptitle('Giroscópio: Todos Colares', fontsize=20)
-    fig.text(0.5, 0.04, '???', ha='center', fontsize=15)
+    fig.text(0.5, 0.04, 'gauss', ha='center', fontsize=15)
     fig.text(0.07, 0.5, 'Frequência Absoluta',
              va='center', rotation='vertical', fontsize=15)
     [ax.tick_params(labelsize=12) for _axs in axs for ax in _axs]
