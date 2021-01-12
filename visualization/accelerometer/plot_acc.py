@@ -25,7 +25,6 @@ if __name__ == "__main__":
     dates = df[df.id_colar == base].loc[:, "data"]
     _dates = [datetime.strptime('{}:{}'.format(_d, _h), '%d%m%y:%H%M%S.%f')
               for _d, _h in zip(dates, hours)]
-    #datetime.strptime('250515:131911.203', '%d%m%y:%H%M%S.%f')
     LE = LabelEncoder()
     encode_labels = LE.fit_transform(labels)
     fig, ax = plt.subplots()
@@ -39,5 +38,6 @@ if __name__ == "__main__":
         ax.plot(_t, _acc[3],
                 marker=".",  c=colors[name], label=LE.inverse_transform([name])[0])
     plt.legend()
+    #plt.legend(bbox_to_anchor=(1, 1), loc="upper left")
     legend_without_duplicate_labels(ax)
     plt.show()
