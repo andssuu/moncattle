@@ -82,7 +82,8 @@ def load_data():
     url = 'moncattle/data/lomba.csv'
     df = pd.read_csv(url)
     # remove a ultima coluna (dados)
-    data = df[df.columns[1:10]]
+    #data = df[df.columns[1:10]]
+    data = df[df.columns[1:4]]
     # normaliza os dados
     normalized_data = (data - data.min()) / (data.max() - data.min())
     # retorna a última coluna (rótulos)
@@ -100,7 +101,7 @@ le = preprocessing.LabelEncoder()
 le.fit(training_labels.values)
 training_labels_transformed = le.transform(training_labels.values)
 # chama RBF
-rbfnet = RBFNet(lr=1e-2, attnumber=9, k=4, computeStds=computeEqualStds)
+rbfnet = RBFNet(attnumber=3, k=5, computeStds=computeEqualStds)
 rbfnet.fit(training_inputs.values, training_labels_transformed)
 # transforma rótulos do conjunto de teste em numeros pra calculo do erro
 le = preprocessing.LabelEncoder()

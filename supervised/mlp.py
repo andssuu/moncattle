@@ -1,20 +1,17 @@
-import pickle
-import gzip
 import random
+
 import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn import preprocessing
 
 
-# Função de Ativação Sigmóide
 def sigmoid(net):
     return 1.0/(1.0+np.exp(-net))
-
-# Função para retornar as derivadas da função Sigmóide
 
 
 def sigmoid_prime(z):
     return sigmoid(z)*(1-sigmoid(z))
-
-# Classe Network
 
 
 class Network(object):
@@ -37,12 +34,9 @@ class Network(object):
 
     def SGD(self, training_data, epochs, mini_batch_size, _n, test_data=None):
         # dataset de treino
-        training_data = list(training_data)
         n = len(training_data)
         # dataset de teste
-        if test_data:
-            test_data = list(test_data)
-            n_test = len(test_data)
+        n_test = len(test_data)
         for j in range(epochs):
             random.shuffle(training_data)
             # técnica que realiza o treinamento por lotes
@@ -126,36 +120,44 @@ class Network(object):
 
 
 def load_data():
-    f = gzip.open('redes_neurais_pos/MLP/mnist.pkl.gz', 'rb')
-    training_data, validation_data, test_data = pickle.load(
-        f, encoding="latin1")
-    f.close()
-    return (training_data, validation_data, test_data)
-
-
-def load_data_wrapper():
-    tr_d, va_d, te_d = load_data()
-    training_inputs = [np.reshape(x, (784, 1)) for x in tr_d[0]]
-    training_results = [vectorized_result(y) for y in tr_d[1]]
-    training_data = zip(training_inputs, training_results)
-    validation_inputs = [np.reshape(x, (784, 1)) for x in va_d[0]]
-    validation_data = zip(validation_inputs, va_d[1])
-    test_inputs = [np.reshape(x, (784, 1)) for x in te_d[0]]
-    test_data = zip(test_inputs, te_d[1])
-    return (training_data, validation_data, test_data)
+    url = 'moncattle/data/lomba.csv'
+    df = pd.read_csv(url)
+    # remove a ultima coluna (dados)
+    data = df[df.columns[1:10]]
+    # normaliza os dados
+    normalized_data = (data - data.min()) / (data.max() - data.min())
+    col_maxes = data.max(axis=0)
+    normalized_data = (data - col_maxes.min()) / (col_maxes.max() - col_maxes.min())
+    # retorna a última coluna (rótulos)
+    labels = df[df.columns[-1]]
+    # separa em conjunto de treinamento e teste com seus respectivos rótulos
+    x_train, x_test, y_train, y_test = train_test_split(
+        normalized_data, labels, test_size=0.4, random_state=0)
+    # x_train, x_val, y_train, y_val = train_test_split(
+    #    x_train, y_train, test_size=0.2, random_state=1)
+    le = preprocessing.LabelEncoder()
+    le.fit(y_train.values)
+    y_train = [vectorized_result(y) for y in le.transform(y_train.values)]
+    #y_val = [vectorized_result(y) for y in le.transform(y_val.values)]
+    #y_test = [vectorized_result(y) for y in le.transform(y_test.values)]
+    x_train = [np.reshape(x, (9, 1)) for x in x_train.values]
+    x_test = [np.reshape(x, (9, 1)) for x in x_test.values]
+    return zip(x_train, y_train), zip(x_test, le.transform(y_test.values))
+    # return zip(x_train, y_train), zip(x_val.values, y_val), zip(x_test, le.transform(y_test.values))
+    # return x_train.values, y_train, x_val.values, y_val, x_test.values, y_test
 
 
 def vectorized_result(j):
-    e = np.zeros((10, 1))
+    e = np.zeros((4, 1))
     e[j] = 1.0
     return e
 
 
 if __name__ == "__main__":
-    training_data, validation_data, test_data = load_data_wrapper()
-    training_data = list(training_data)
-
+    #training_data, validation_data, test_data = load_data()
+    training_data, test_data = load_data()
+    #x_train, y_train, x_val, y_val, x_test, y_test = load_data()
     # arquitetura da rede
-    arquitecture = [784, 30, 20, 10]
+    arquitecture = [9, 10, 4]
     mlp = Network(arquitecture)
-    mlp.SGD(training_data, 10, 32, 0.3, test_data=test_data)
+    mlp.SGD(list(training_data), 20, 24, 0.3, test_data=list(test_data))
