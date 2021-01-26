@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("moncattle/data/lomba.csv", float_precision='high')
+    df = pd.read_csv("moncattle/data/lomba.csv", float_precision='high', sep=';')
     fig, axs = plt.subplots(2, 5, sharex=True, sharey=True)
     fig.canvas.set_window_title('histogram accelerometer all')
     fig.suptitle('Todos Colares', fontsize=20)
