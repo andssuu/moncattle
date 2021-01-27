@@ -21,8 +21,8 @@ class Score():
         self.momentum = momentum
 
     def __repr__(self):
-        return "Score: {} Learning Rate: {}, L2 (regularization term): {}, Momentum: {}".format(
-            self.value, self.learning_rate, self.momentum, self.l2)
+        return "Score: {}, Mean: {}, Std: {}, Learning Rate: {}, L2 (regularization term): {}, Momentum: {}".format(
+            self.value, self.mean, self.std, self.learning_rate, self.momentum, self.l2)
 
 
 if __name__ == "__main__":
