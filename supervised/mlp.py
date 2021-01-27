@@ -2,7 +2,7 @@ import random
 
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import KFold
 from sklearn import preprocessing
 
 
@@ -33,12 +33,10 @@ class Network(object):
         return x
 
     def SGD(self, training_data, epochs, mini_batch_size, _n, test_data=None):
-        # dataset de treino
         n = len(training_data)
-        # dataset de teste
         n_test = len(test_data)
-        for j in range(epochs):
-            random.shuffle(training_data)
+        for j in range(1, epochs+1):
+            # random.shuffle(training_data)
             # técnica que realiza o treinamento por lotes
             # mini_batch_size = tamanho do lote
             mini_batches = [training_data[k:k+mini_batch_size]
@@ -47,10 +45,12 @@ class Network(object):
                 self.update_mini_batch(mini_batch, _n)
             if test_data:
                 acc = self.evaluate(test_data)
+                rate_acc = (acc*100)/n_test
                 print("Epoch {} : {} / {} = {}%".format(j,
-                                                        acc, n_test, (acc*100)/n_test))
+                                                        acc, n_test, rate_acc))
             else:
                 print("Epoch {} finalizada".format(j))
+        return rate_acc
 
     def update_mini_batch(self, mini_batch, _n):
         # inicializa matriz com derivadas de pesos e limiares
@@ -119,34 +119,6 @@ class Network(object):
         return (output_activations-y)
 
 
-def load_data():
-    url = 'moncattle/data/lomba.csv'
-    df = pd.read_csv(url)
-    # remove a ultima coluna (dados)
-    data = df[df.columns[1:10]]
-    # normaliza os dados
-    normalized_data = (data - data.min()) / (data.max() - data.min())
-    col_maxes = data.max(axis=0)
-    normalized_data = (data - col_maxes.min()) / (col_maxes.max() - col_maxes.min())
-    # retorna a última coluna (rótulos)
-    labels = df[df.columns[-1]]
-    # separa em conjunto de treinamento e teste com seus respectivos rótulos
-    x_train, x_test, y_train, y_test = train_test_split(
-        normalized_data, labels, test_size=0.4, random_state=0)
-    # x_train, x_val, y_train, y_val = train_test_split(
-    #    x_train, y_train, test_size=0.2, random_state=1)
-    le = preprocessing.LabelEncoder()
-    le.fit(y_train.values)
-    y_train = [vectorized_result(y) for y in le.transform(y_train.values)]
-    #y_val = [vectorized_result(y) for y in le.transform(y_val.values)]
-    #y_test = [vectorized_result(y) for y in le.transform(y_test.values)]
-    x_train = [np.reshape(x, (9, 1)) for x in x_train.values]
-    x_test = [np.reshape(x, (9, 1)) for x in x_test.values]
-    return zip(x_train, y_train), zip(x_test, le.transform(y_test.values))
-    # return zip(x_train, y_train), zip(x_val.values, y_val), zip(x_test, le.transform(y_test.values))
-    # return x_train.values, y_train, x_val.values, y_val, x_test.values, y_test
-
-
 def vectorized_result(j):
     e = np.zeros((4, 1))
     e[j] = 1.0
@@ -154,10 +126,35 @@ def vectorized_result(j):
 
 
 if __name__ == "__main__":
-    #training_data, validation_data, test_data = load_data()
-    training_data, test_data = load_data()
-    #x_train, y_train, x_val, y_val, x_test, y_test = load_data()
-    # arquitetura da rede
-    arquitecture = [9, 10, 4]
-    mlp = Network(arquitecture)
-    mlp.SGD(list(training_data), 20, 24, 0.3, test_data=list(test_data))
+    df = pd.read_csv('moncattle/data/lomba.csv')
+    data = df[df.columns[1:10]]
+    #data = [np.reshape(x, (9, 1)) for x in x_train.values]
+    data = (data - data.min()) / (data.max() - data.min())
+    labels = df[df.columns[-1]]
+    le = preprocessing.LabelEncoder()
+    le.fit(labels.values)
+    labels = le.transform(labels.values)
+    # labels = np.array([vectorized_result(y)
+    #                   for y in le.transform(labels.values)])
+    kf = KFold(n_splits=10, shuffle=True)
+    results = []
+    for k, (train_index, val_index) in enumerate(kf.split(data), 1):
+        print("K-Fold -->", k)
+        #print("TRAIN:", train_index, "VALIDATION:", val_index)
+        #x_train, x_val = data.iloc[train_index], data.iloc[val_index]
+        x_train = [np.reshape(x, (9, 1))
+                   for x in data.iloc[train_index].values]
+        y_train = [vectorized_result(labels[y]) for y in train_index]
+        training_data = zip(x_train, y_train)
+        # y_train, y_val = [labels[y]
+        #                   for y in train_index], [labels[y] for y in val_index]
+        x_validation = [np.reshape(x, (9, 1))
+                        for x in data.iloc[val_index].values]
+        y_validation = [labels[y] for y in val_index]
+        validation_data = zip(x_validation, y_validation)
+        arquitecture = [9, 9, 9, 4]
+        mlp = Network(arquitecture)
+        output = mlp.SGD(list(training_data), 20, 24, 0.3,
+                         test_data=list(validation_data))
+        results.append(output)
+    print("Acurácia média 10-Fold: {}".format(np.mean(results)))
