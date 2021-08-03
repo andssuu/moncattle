@@ -29,10 +29,6 @@ A2 | A3 | B2 | B3 | C3 | C4 | D1 | D2 | D3 | D4 | Total
 --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- | 
 1112 | 2033 | 1131 | 1735 | 1852 | 406 | 1126 | 1690 | 1598 | 405 | 13088
 
-## Pré-Processamento
-
-## Aprendizagem Supervisionada
-
 ## Links
 
 [Dissertação Luiz Lomba](https://repositorio.ufms.br/jspui/bitstream/123456789/2627/1/LUIZ%20FERNANDO%20DELBONI%20LOMBA.pdf)
