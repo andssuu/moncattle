@@ -19,9 +19,7 @@ Repositório dedicado para o desenvolvimento dos experimentos relacionados à di
     * **Em Pé**: o animal está sobre as quatro patas, com a cabeça erguida e não há deslocamento;
     * **Deitado**: o animal está com as patas abaixadas e com a barriga tocando o solo.
 
-### Base de Dados
-
-[Colab Base Jesus](https://github.com/andssuu/cattle_datasets/blob/main/jesus/dataset_jesus.ipynb)
+## Base de Dados
 
 O arquivo dataset.csv contém os dados de todas as coleiras. No total, há 13088 amostras. A tabela a seguir mostra a distribuição das amostras por coleira
 
@@ -29,6 +27,37 @@ A2 | A3 | B2 | B3 | C3 | C4 | D1 | D2 | D3 | D4 | Total
 --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- | 
 1112 | 2033 | 1131 | 1735 | 1852 | 406 | 1126 | 1690 | 1598 | 405 | 13088
 
-## Links
+## Notebooks Sensores
 
-[Dissertação Luiz Lomba](https://repositorio.ufms.br/jspui/bitstream/123456789/2627/1/LUIZ%20FERNANDO%20DELBONI%20LOMBA.pdf)
+* [Acelerômetro](https://colab.research.google.com/github/andssuu/moncattle/blob/master/visualization/notebooks/accelerometer.ipynb)
+
+* [Giroscópio](https://colab.research.google.com/github/andssuu/moncattle/blob/master/visualization/notebooks/gyroscope.ipynb)
+
+* [Magnetômetro](https://colab.research.google.com/github/andssuu/moncattle/blob/master/visualization/notebooks/magnetometer.ipynb)
+
+## Trabalhos Relacionados
+
+### Leandro de Jesus
+
+*   [Identificação do Comportamento Bovino por meio do Monitoramento Animal (Dissertação)](https://repositorio.ufms.br/bitstream/123456789/2075/1/Leandro%20de%20Jesus.pdf)
+
+*   [UTILIZAÇÃO DE TÉCNICAS DE RECONHECIMENTO DE PADRÕES PARA ESTIMAR O COMPORTAMENTO DE BOVINOS EM FUNÇÃO DE VARIÁVEIS AMBIENTAIS (Tese Doutorado)](https://repositorio.pgsskroton.com/bitstream/123456789/22927/1/LEANDRO%20DE%20JESUS.pdf)
+
+*   [IDENTIFICAÇÃO DO COMPORTAMENTO BOVINO POR MEIO DO MONITORAMENTO
+ANIMAL (Resumo ao I Simpósio Brasileiro de Pecuária de Precisão Aplicada à Bovinocultura de Corte)](https://ainfo.cnptia.embrapa.br/digital/bitstream/item/119723/1/identificacao-do-comportamento-bovino-por-meio-do-monitoramento-animal.pdf)
+
+### Luiz Fernando Delboni Lomba
+
+*   [Identificacao do Comportamento Bovino a partir dos Dados de Movimentacao e do Posicionamento do Animal (Dissertação)](https://repositorio.ufms.br/bitstream/123456789/2627/1/LUIZ%20FERNANDO%20DELBONI%20LOMBA.pdf)
+
+### Outros
+
+*   [Sistema para monitoramento da movimentação bovina e aferição dos comportamentos (SBIAgro)](https://ainfo.cnptia.embrapa.br/digital/bitstream/item/169799/1/Sistema-para-monitoramento-da-movimentacao-bovina.pdf)
+
+*   [PREDIÇÃO DO COMPORTAMENTO BOVINO COM SENSORES DE POSIÇÃO E MOVIMENTAÇÃO 1](http://reunioessbpc.org.br/campogrande/inscritos/resumos/4888_1693116b9f38336f4c0bb9860d3dd9ab0.pdf)
+
+*   [PREDIÇÃO DO COMPORTAMENTO BOVINO COM SENSORES DE POSIÇÃO E MOVIMENTAÇÃO 2](https://www.brazilianjournals.com/index.php/BRJD/article/view/22203/17723)
+
+*   [O uso de inteligência artificial na identificação do comportamento bovino](http://www.eventos.uepg.br/sbiagro/2015/anais/SBIAgro2015/pdf_resumos/16/16_luiz_fernando_delboni_lomba_85.pdf)
+
+*   [Aplicação de técnicas de reconhecimento de padrões para estimar o comportamento debovinos em função de dados de posicionamento GPS - JESUS (2018)](https://www.geopantanal.cnptia.embrapa.br/Anais-Geopantanal/pdfs/p3.pdf)
