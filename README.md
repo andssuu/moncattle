@@ -28,13 +28,21 @@ A2 | A3 | B2 | B3 | C3 | C4 | D1 | D2 | D3 | D4 | Total
 --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- | 
 1112 | 2033 | 1131 | 1735 | 1852 | 406 | 1126 | 1690 | 1598 | 405 | 13088
 
-## Notebooks Sensores
+## Notebooks
+
+
+* [CNNs](https://colab.research.google.com/github/andssuu/moncattle/blob/master/notebooks/cnn_6.ipynb)
+
+* [Top-5 Classificadores](https://colab.research.google.com/github/andssuu/moncattle/blob/master/notebooks/top5_classifiers_6.ipynb)
 
 * [Acelerômetro](https://colab.research.google.com/drive/1Zx0bVCSNSRDoqhBQ6uySONDKvaZkiZw1?usp=sharing)
 
 * [Giroscópio](https://colab.research.google.com/drive/1trXq9sLZd5u5y0RtJhvtcBTyMN64Y3l1?usp=sharing)
 
 * [Magnetômetro](https://colab.research.google.com/drive/1DHpElWUB1YtBNloKtzsXeQKEDzahV15R?usp=sharing)
+
+
+
 
 ## Trabalhos Relacionados
 
