@@ -18,7 +18,7 @@ Repositório dedicado para o desenvolvimento dos experimentos relacionados à di
     * **Andando**: o animal também está sobre as quatros patas, porém com o pescoço reto (apontando o fucinho para frente) e se deslocando pela área de pasto;
     * **Em Pé**: o animal está sobre as quatro patas, com a cabeça erguida e não há deslocamento;
     * **Deitado**: o animal está com as patas abaixadas e com a barriga tocando o solo.
-Já os comportamentos secundários, consistem em uma ramificação dos comportamentos “Em Pé” e “Deitado” adicionando o comportamento ruminar, o qual o animal está com a mandíbula em movimento. Logo, surgem duas novas classes: “Ruminando Em Pé” e “Ruminando Deitado”.
+* Já os comportamentos secundários, consistem em uma ramificação dos comportamentos “Em Pé” e “Deitado” adicionando o comportamento ruminar, o qual o animal está com a mandíbula em movimento. Logo, surgem duas novas classes: “Ruminando Em Pé” e “Ruminando Deitado”.
 
 ## Base de Dados
 
