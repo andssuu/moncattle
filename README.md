@@ -30,11 +30,11 @@ A2 | A3 | B2 | B3 | C3 | C4 | D1 | D2 | D3 | D4 | Total
 
 ## Notebooks Sensores
 
-* [Acelerômetro](https://colab.research.google.com/github/andssuu/moncattle/blob/master/visualization/notebooks/accelerometer.ipynb)
+* [Acelerômetro](https://colab.research.google.com/drive/1Zx0bVCSNSRDoqhBQ6uySONDKvaZkiZw1?usp=sharing)
 
-* [Giroscópio](https://colab.research.google.com/github/andssuu/moncattle/blob/master/visualization/notebooks/gyroscope.ipynb)
+* [Giroscópio](https://colab.research.google.com/drive/1trXq9sLZd5u5y0RtJhvtcBTyMN64Y3l1?usp=sharing)
 
-* [Magnetômetro](https://colab.research.google.com/github/andssuu/moncattle/blob/master/visualization/notebooks/magnetometer.ipynb)
+* [Magnetômetro](https://colab.research.google.com/drive/1DHpElWUB1YtBNloKtzsXeQKEDzahV15R?usp=sharing)
 
 ## Trabalhos Relacionados
 
