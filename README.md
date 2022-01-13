@@ -22,7 +22,7 @@ Repositório dedicado para o desenvolvimento dos experimentos relacionados à di
 
 ## Base de Dados
 
-O arquivo dataset.csv contém os dados de todas as coleiras. No total, há 13088 amostras. A tabela a seguir mostra a distribuição das amostras por coleira
+O arquivo dataset.csv contém os dados de todas as coleiras. No total, há 13088 amostras. A seguir, a tabela mostra a distribuição das amostras por coleira
 
 A2 | A3 | B2 | B3 | C3 | C4 | D1 | D2 | D3 | D4 | Total
 --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- | 
