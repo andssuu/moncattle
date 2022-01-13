@@ -13,11 +13,12 @@ Repositório dedicado para o desenvolvimento dos experimentos relacionados à di
 * Sensores: acelerômetro, giroscópio, magnetômetro e GPS
 * As coletas eram feitas a cada 1 segundo para todos os sensores
 * Carregamento offline dos dados por um cartão SD
-* Classes de labels: pastar, em pé, deitado e andando
+* Houve uma divisão dos comportamentos em primários e secundários. A seguir a definição dos comportamnetos primários:
     * **Pastando/Procurando**: caracterizado pelo animal sobre as quatros patas, com a cabeça baixa procurando ou mastigando o capim. O animal pode ou não estar em movimento, já que ele pode estar se deslocando à procura de capim;
     * **Andando**: o animal também está sobre as quatros patas, porém com o pescoço reto (apontando o fucinho para frente) e se deslocando pela área de pasto;
     * **Em Pé**: o animal está sobre as quatro patas, com a cabeça erguida e não há deslocamento;
     * **Deitado**: o animal está com as patas abaixadas e com a barriga tocando o solo.
+Já os comportamentos secundários, consistem em uma ramificação dos comportamentos “Em Pé” e “Deitado” adicionando o comportamento ruminar, o qual o animal está com a mandíbula em movimento. Logo, surgem duas novas classes: “Ruminando Em Pé” e “Ruminando Deitado”.
 
 ## Base de Dados
 
